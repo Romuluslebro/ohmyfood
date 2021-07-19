@@ -1,0 +1,13 @@
+{
+  "name": "corentinjacintop3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "home" : "sass --watch ./scss/pages/home.scss ./css/home.css",
+    "menu" : "sass --watch ./scss/pages/menu.scss ./css/menu.css"
+
+  },
+  "author": "",
+  "license": "ISC"
+}
