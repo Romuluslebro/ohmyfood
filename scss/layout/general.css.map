@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "general.scss",
+        "../composant/header.scss",
+        "../composant/footer.scss"
+    ],
+    "names": [],
+    "file": "general.css"
+}
