@@ -1,5 +1,10 @@
 @import "../layout/general.scss";
 
+body{
+    margin: 0px;
+    margin-right: 0px;
+    padding-top: 75px;
+}
 
 .header {
 
@@ -7,10 +12,19 @@ font-family: "Shrikhand";
 display: flex;
 justify-content: center;
 height: 75px;
-box-shadow: 0px 1px 3px black ;
-margin-top: -10px;
-margin-left: -8px;
-margin-right: -8px;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+background-color: white;
+z-index: 100;
+box-shadow: 0px 3px 3px rgba($color: black, $alpha: 0.5);
+@include breakpoint("desktop") {
+    margin-top: 20px;
+  }
 
 }
 
@@ -19,13 +33,229 @@ margin-right: -8px;
 
     display: flex;
     justify-content: center;
-    margin-right: 15px;
-    
+    background-color: #e5e5e5;
+    width: 100%;
 
     .fas {
-        margin-top: 14px;
+        margin-top: 16px;
         margin-right: 15px;
     }
     
 } 
+
+.exploration {
+    font-family: "roboto";
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px; 
+    padding-bottom: 50px;
+
+    p {
+        color: rgba($color: black, $alpha: 0.5);
+    }
+
+    .explorer  {
+        border-radius: 50px;
+        border: 0px;
+        height: 50px;
+        width: 200px;
+        color: white;
+        font-size: 1em;
+        background: linear-gradient(to top, $primary-color, $secondary-color);
+        cursor: pointer;
+    }
+
+
+}
+
+h2{
+    padding-left: 1.5rem;
+}
+
+.fonctionnement{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "roboto";
+    font-size: 15px;
+    font-weight: 400;
+    
+
+    
+
+    .menu{
+
+        font-family: 'roboto';
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 15px;     
+        border-radius: 15px;
+        box-shadow: 0px 0px 12px 0px rgba(0 0 0 / 20%);
+        cursor: pointer;
+        height: 70px;
+        position: relative;
+        width: 90%;
+
+        &:hover{
+            background-color: lighten($color: $primary-color, $amount: 35%);
+        }
+
+        p{
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            
+
+        }
+
+        .fas{
+            position: absolute;
+            left: 4rem;
+            font-size: 1.3rem;
+            color: $primary-color;
+        }
+
+        .number{
+            position:absolute;
+            left: 0px;
+            background-color: $primary-color;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        
+        
+    }
+
+    
+}
+
+h2{
+    font-family: 'roboto';
+
+}
+
+
+.block_restaurant{
+    
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    margin: 1.5rem;
+
+    
+
+
+    img{
+        height: 12rem;
+        width: 100%;
+        border: 0 solid transparent;
+        border-radius: 1rem 1rem 0 0;
+        box-shadow: none;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    h3  {
+        
+        font-family: "roboto";
+        font-weight: bold;
+        border-radius: 0 0 1rem 1rem;
+        padding-left: 1rem;
+        margin-bottom: 10px;
+
+
+    }
+
+    p{
+        font-family: 'roboto';
+        font-weight: bold;
+        border-radius: 0 0 1rem 1rem;
+        padding-left: 1rem;
+        margin-top: 0px;
+
+
+    }
+
+    .badge{
+
+        font-family: 'roboto';
+        background-color: #99e2d0;
+        color: #1b6150;
+        padding: .5rem;
+        border-radius: 2px;
+        position: absolute;
+        top: 1rem;
+        right: .75rem;
+        
+    }
+
+    .bandeau{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: space;
+        
+    }
+    
+    
+
+    
+
+
+}
  
+footer{
+    background-color: rgba($color: black, $alpha: 0.8);
+    color: white;
+    width: 100%;
+    overflow: hidden;
+
+    .titre_footer{
+        font-family: 'Shrikhand';
+        font-size: 1.3rem;
+        padding: 20px;
+    }
+
+
+    li{
+        list-style: none;
+        position: relative;
+
+        .fas{
+            position: absolute;
+            left: 1rem;
+        }
+        
+        
+
+
+    }
+
+
+
+
+    
+}
