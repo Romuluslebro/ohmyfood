@@ -1,36 +1,86 @@
 @import "../layout/general.scss";
 
-body{
+body {
     margin: 0px;
     margin-right: 0px;
     padding-top: 75px;
+
+    .loader_wrap {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 99;
+        background-color: rgba($color: grey, $alpha: 0.6);
+        animation: spinner 3s linear 1;
+        opacity: 0;
+        transform: translate(-999999px);
+
+        @keyframes spinner {
+            0% {
+                opacity: 1;
+                transform: translate(0px);
+            }
+
+            90% {
+                opacity: 1;
+                transform: translate(0px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-999999px);
+            }
+        }
+
+        .loader {
+            border-top: 10px solid $primary-color;
+            border-bottom: 10px solid $secondary-color;
+            border-left: 10px solid $tertionary-color;
+            border-right: 10px solid $tertionary-color;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            animation: spin 2s linear infinite;
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 .header {
-
-font-family: "Shrikhand";
-display: flex;
-justify-content: center;
-height: 75px;
-margin-top: 0px;
-margin-left: 0px;
-margin-right: 0px;
-position: fixed;
-top: 0px;
-left: 0px;
-width: 100%;
-background-color: white;
-z-index: 100;
-box-shadow: 0px 3px 3px rgba($color: black, $alpha: 0.5);
-@include breakpoint("desktop") {
-    margin-top: 20px;
-  }
-
+    font-family: "Shrikhand";
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0px 3px 3px rgba($color: black, $alpha: 0.5);
+    @include breakpoint("desktop") {
+        margin-top: 20px;
+    }
 }
 
-
 .localisation {
-
     display: flex;
     justify-content: center;
     background-color: #e5e5e5;
@@ -40,8 +90,7 @@ box-shadow: 0px 3px 3px rgba($color: black, $alpha: 0.5);
         margin-top: 16px;
         margin-right: 15px;
     }
-    
-} 
+}
 
 .exploration {
     font-family: "roboto";
@@ -51,14 +100,14 @@ box-shadow: 0px 3px 3px rgba($color: black, $alpha: 0.5);
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 20px; 
+    padding-top: 20px;
     padding-bottom: 50px;
 
     p {
         color: rgba($color: black, $alpha: 0.5);
     }
 
-    .explorer  {
+    .explorer {
         border-radius: 50px;
         border: 0px;
         height: 50px;
@@ -68,15 +117,13 @@ box-shadow: 0px 3px 3px rgba($color: black, $alpha: 0.5);
         background: linear-gradient(to top, $primary-color, $secondary-color);
         cursor: pointer;
     }
-
-
 }
 
-h2{
+h2 {
     padding-left: 1.5rem;
 }
 
-.fonctionnement{
+.fonctionnement {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -85,19 +132,15 @@ h2{
     font-family: "roboto";
     font-size: 15px;
     font-weight: 400;
-    
 
-    
-
-    .menu{
-
-        font-family: 'roboto';
+    .menu {
+        font-family: "roboto";
         background-color: #f2f2f2;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin: 15px;     
+        margin: 15px;
         border-radius: 15px;
         box-shadow: 0px 0px 12px 0px rgba(0 0 0 / 20%);
         cursor: pointer;
@@ -105,29 +148,26 @@ h2{
         position: relative;
         width: 90%;
 
-        &:hover{
+        &:hover {
             background-color: lighten($color: $primary-color, $amount: 35%);
             box-shadow: 0px 0px 20px 0px rgba(0 0 0 / 20%);
-            
         }
 
-        p{
+        p {
             font-weight: bold;
             font-size: 1.2em;
             position: relative;
-            
-
         }
 
-        .fas{
+        .fas {
             position: absolute;
             left: 4rem;
             font-size: 1.3rem;
             color: $primary-color;
         }
 
-        .number{
-            position:absolute;
+        .number {
+            position: absolute;
             left: 0px;
             background-color: $primary-color;
             transform: translateX(-50%);
@@ -140,22 +180,14 @@ h2{
             color: white;
             font-size: 0.9em;
         }
-
-        
-        
     }
-
-    
 }
 
-h2{
-    font-family: 'roboto';
-
+h2 {
+    font-family: "roboto";
 }
 
-
-.block_restaurant{
-    
+.block_restaurant {
     background-color: #f2f2f2;
     border-radius: 15px;
     position: relative;
@@ -167,10 +199,7 @@ h2{
     width: 90%;
     margin: 1.5rem;
 
-    
-
-
-    img{
+    img {
         height: 12rem;
         width: 100%;
         border: 0 solid transparent;
@@ -180,90 +209,83 @@ h2{
         object-position: center;
     }
 
-    h3  {
-        
+    h3 {
         font-family: "roboto";
         font-weight: bold;
         border-radius: 0 0 1rem 1rem;
         padding-left: 1rem;
         margin-bottom: 10px;
-
-
     }
 
-    p{
-        font-family: 'roboto';
+    p {
+        font-family: "roboto";
         font-weight: bold;
         border-radius: 0 0 1rem 1rem;
         padding-left: 1rem;
         margin-top: 0px;
-
-
     }
 
-    .badge{
-
-        font-family: 'roboto';
+    .badge {
+        font-family: "roboto";
         background-color: #99e2d0;
         color: #1b6150;
-        padding: .5rem;
+        padding: 0.5rem;
         border-radius: 2px;
         position: absolute;
         top: 1rem;
-        right: .75rem;
-
-
-        
+        right: 0.75rem;
     }
 
-    .bandeau{
+    .bandeau {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: space;
+        align-items: space; position: relative;
 
-        .far{
+        .h3{
+            font-family: 'roboto_bold';
+            font-weight: bold;
+        }
+
+        .p{
+            font-family: 'roboto_lighter';
+            font-weight: lighter;
+        }
+
+
+
+        .far {
+
+            display: flex;
+            font-size: 1.9em;
+            cursor: pointer;
+            
+            
+            
 
         }
-        
     }
-    
-    
-
-    
-
-
 }
- 
-footer{
+
+footer {
     background-color: rgba($color: black, $alpha: 0.8);
     color: white;
     width: 100%;
     overflow: hidden;
 
-    .titre_footer{
-        font-family: 'Shrikhand';
+    .titre_footer {
+        font-family: "Shrikhand";
         font-size: 1.3rem;
         padding: 20px;
     }
 
-
-    li{
+    li {
         list-style: none;
         position: relative;
 
-        .fas{
+        .fas {
             position: absolute;
             left: 1rem;
         }
-        
-        
-
-
     }
-
-
-
-
-    
 }
